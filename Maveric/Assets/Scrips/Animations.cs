@@ -2,18 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ant_AI : MonoBehaviour
+public class Animations : MonoBehaviour
 {
 
-    [SerializeField] GameObject antPrefab;
-    [SerializeField] float speed;
-
-    [SerializeField] List<GameObject> antPath;
-
+    Animator animator;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        animator = GetComponent<Animator>();
+        animator.SetBool("isMoving", true);
     }
 
     // Update is called once per frame
