@@ -1,21 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
-public class PopUpSystem : MonoBehaviour
-{
-    public GameObject popUpBoxPrefab;
-
+public class PopUpSystem : MonoBehaviour {
+    // Start is called before the first frame update
     public Animator animator;
     public TMP_Text popUpText;
-
     public TMP_Text popUpTitle;
 
-    public void PopUp(string text, string title){
+    public bool isOpen = false;
+
+    public void PopUp (string text, string title) {
         popUpText.text = text;
         popUpTitle.text = title;
-        animator.SetTrigger("pop");
+        animator.SetTrigger ("pop");
+        isOpen = true;
+    }
+
+    public void Close(){
+        isOpen = false;
+        Debug.Log("Sulkeutuu");
     }
 
 }

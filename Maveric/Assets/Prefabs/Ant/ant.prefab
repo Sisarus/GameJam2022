@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 181509575547095131}
   - component: {fileID: 181509575547095130}
   - component: {fileID: 181509575547095129}
-  - component: {fileID: 181509575547095135}
   - component: {fileID: 3530522260886399342}
-  m_Layer: 0
+  - component: {fileID: 5295171028960405342}
+  - component: {fileID: 1864630351990364512}
+  - component: {fileID: 540703866668006763}
+  m_Layer: 7
   m_Name: ant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,18 +106,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &181509575547095135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 181509575547095109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a1bee79d816c2b4a9d382d3a0116bd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3530522260886399342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,3 +118,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72b14fe4bb48e745aceb733e1f08853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5295171028960405342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181509575547095109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ba7a5fae0be5543886cf1c263594c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isControlledByPlayer: 0
+  creatureName: Ant
+--- !u!70 &1864630351990364512
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181509575547095109}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.00694561}
+  m_Size: {x: 0.5, y: 0.60986805}
+  m_Direction: 0
+--- !u!114 &540703866668006763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181509575547095109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9962409e1a2004d8f34087d4aea84f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameObject: Ant
+  data: Can conttroll
+  energy: 20
+  eatedLevel: 0
+  canSelectToShowLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  playerCanControl: 1
