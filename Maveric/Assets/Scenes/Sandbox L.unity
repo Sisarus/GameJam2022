@@ -123,6 +123,48 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &27609182 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 891795514789381095, guid: f539b7b2398a2dd4bb546e7fe5a6d951, type: 3}
+  m_PrefabInstance: {fileID: 431337683}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &27609185
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27609182}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.000000059604645, y: -0.0892328}
+  m_Size: {x: 1.3030957, y: 1.8030956}
+  m_Direction: 0
+--- !u!50 &27609186
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27609182}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!4 &55422358 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 891795514789381112, guid: f539b7b2398a2dd4bb546e7fe5a6d951, type: 3}
@@ -550,6 +592,7 @@ GameObject:
   - component: {fileID: 1733384329}
   - component: {fileID: 1733384328}
   - component: {fileID: 1733384331}
+  - component: {fileID: 1733384332}
   m_Layer: 0
   m_Name: Green area mouse
   m_TagString: Untagged
@@ -822,9 +865,9 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: -22.369724, y: 24.56869, z: 0}
+    - position: {x: -22.238852, y: 24.568687, z: 0}
       leftTangent: {x: 0.2102871, y: 0.79548454, z: 0}
-      rightTangent: {x: -0.27490234, y: -1.037756, z: 0}
+      rightTangent: {x: -0.27490044, y: -1.037756, z: 0}
       mode: 1
       height: 1
       bevelCutoff: 0
@@ -1215,23 +1258,23 @@ EdgeCollider2D:
   - {x: 20.68549, y: 24.827126}
   - {x: 17.842068, y: 24.770767}
   - {x: 16.779741, y: 24.72145}
-  - {x: 16.196533, y: 24.721487}
+  - {x: 16.19653, y: 24.721487}
   - {x: 15.7777405, y: 24.74836}
   - {x: 15.331213, y: 24.805592}
   - {x: 14.558185, y: 24.934864}
-  - {x: 13.613042, y: 25.043968}
+  - {x: 13.613041, y: 25.043968}
   - {x: 12.644777, y: 25.11937}
   - {x: 12.058027, y: 25.139702}
   - {x: 7.5320654, y: 25.02423}
   - {x: 4.474591, y: 24.956558}
   - {x: 4.2049904, y: 24.960114}
   - {x: 3.644548, y: 25.012094}
-  - {x: 3.0889165, y: 25.103977}
+  - {x: 3.0889175, y: 25.103977}
   - {x: 1.7525079, y: 25.377384}
   - {x: 1.2618427, y: 25.457859}
-  - {x: 0.8149916, y: 25.498726}
-  - {x: -4.097083, y: 25.380169}
-  - {x: -4.5425644, y: 25.359264}
+  - {x: 0.8149968, y: 25.498726}
+  - {x: -4.097081, y: 25.380169}
+  - {x: -4.542565, y: 25.359264}
   - {x: -4.9448504, y: 25.322338}
   - {x: -5.317668, y: 25.271725}
   - {x: -5.6678658, y: 25.209747}
@@ -1240,50 +1283,51 @@ EdgeCollider2D:
   - {x: -8.027729, y: 24.644117}
   - {x: -8.417187, y: 24.57773}
   - {x: -8.83289, y: 24.524956}
-  - {x: -9.380335, y: 24.485458}
+  - {x: -9.324151, y: 24.48734}
   - {x: -9.757316, y: 24.47297}
   - {x: -10.425162, y: 24.490326}
   - {x: -11.083058, y: 24.547533}
-  - {x: -11.730085, y: 24.63143}
+  - {x: -12.048995, y: 24.679474}
   - {x: -13.288126, y: 24.877707}
   - {x: -13.881279, y: 24.960705}
-  - {x: -14.592361, y: 25.02784}
+  - {x: -14.528776, y: 25.023708}
+  - {x: -14.963842, y: 25.052002}
   - {x: -15.451395, y: 25.07353}
   - {x: -16.369038, y: 25.087578}
   - {x: -17.229895, y: 25.072594}
   - {x: -19.286064, y: 24.98365}
   - {x: -20.127289, y: 24.95877}
-  - {x: -21.037504, y: 24.954647}
-  - {x: -21.35786, y: 24.845596}
-  - {x: -21.609978, y: 24.659897}
-  - {x: -21.72631, y: 24.4794}
-  - {x: -21.784073, y: 24.246967}
-  - {x: -21.817467, y: 23.842022}
-  - {x: -21.806648, y: 23.334486}
-  - {x: -21.726551, y: 22.430866}
-  - {x: -21.575375, y: 21.04841}
-  - {x: -21.516605, y: 20.310627}
-  - {x: -21.486908, y: 19.868404}
+  - {x: -21.02347, y: 24.955902}
+  - {x: -21.326736, y: 24.825512}
+  - {x: -21.521458, y: 24.629137}
+  - {x: -21.621044, y: 24.402126}
+  - {x: -21.683365, y: 24.0438}
+  - {x: -21.709316, y: 23.576263}
+  - {x: -21.700539, y: 23.02393}
+  - {x: -21.641369, y: 22.0773}
+  - {x: -21.535744, y: 20.671597}
+  - {x: -21.495546, y: 19.905117}
+  - {x: -21.308102, y: 19.52155}
   - {x: -21.112648, y: 19.186626}
   - {x: -20.983688, y: 18.898518}
   - {x: -20.895096, y: 18.547459}
   - {x: -20.884151, y: 18.132103}
   - {x: -21.063244, y: 16.494503}
   - {x: -21.21777, y: 15.322749}
-  - {x: -21.264437, y: 14.653164}
+  - {x: -21.264437, y: 14.653168}
   - {x: -21.268349, y: 13.6817045}
   - {x: -21.288916, y: 13.306551}
-  - {x: -21.36784, y: 12.488785}
+  - {x: -21.36784, y: 12.488784}
   - {x: -21.584648, y: 10.70153}
-  - {x: -21.672592, y: 9.818709}
-  - {x: -21.70084, y: 9.401545}
+  - {x: -21.672592, y: 9.818707}
+  - {x: -21.70084, y: 9.401546}
   - {x: -21.714874, y: 9.009836}
   - {x: -21.712345, y: 8.651476}
   - {x: -21.69175, y: 8.33552}
   - {x: -21.649364, y: 8.050578}
-  - {x: -21.463861, y: 7.039156}
+  - {x: -21.463861, y: 7.039155}
   - {x: -21.330715, y: 6.1617746}
-  - {x: -21.123398, y: 4.4978867}
+  - {x: -21.123398, y: 4.497884}
   - {x: -21.044765, y: 3.9902449}
   - {x: -20.944492, y: 3.5358682}
   - {x: -20.742466, y: 2.8986762}
@@ -1421,6 +1465,27 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!50 &1733384332
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733384327}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1959785339
 GameObject:
   m_ObjectHideFlags: 3
