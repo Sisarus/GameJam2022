@@ -11,26 +11,19 @@ public class PlayerController : MonoBehaviour
     Vector2 rawInput;
     
     [SerializeField]
-    public LayerMask objectLayer;
-    [SerializeField]
+    public LayerMask canSelectToShowLayer;
+
 
     void Update()
     {
         Move();
         
         if(Input.GetMouseButtonDown(0)){ 
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hitInfo;
-            Debug.DrawRay(ray.origin, ray.direction * 100, Color.green, 2f); // only draws once. Re-clicking does nothing
-            Debug.Log("mouse clicked"); 
-
-            Debug.Log(Input.mousePosition);
-            if (Physics.Raycast(ray, Mathf.Infinity)) {
-                Debug.Log("You selected the ");
-            } else {
-                Debug.Log("ei toimi");
+            Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero, 20f, canSelectToShowLayer);
+            if(hit.collider != null) {
+                Debug.Log("osui");
             }
-
         }
     }
 
