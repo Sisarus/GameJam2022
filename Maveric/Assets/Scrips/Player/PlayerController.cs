@@ -9,22 +9,10 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] float moveSpeed = 5f;
     Vector2 rawInput;
-    
-    [SerializeField]
-    public LayerMask canSelectToShowLayer;
-
 
     void Update()
     {
         Move();
-        
-        if(Input.GetMouseButtonDown(0)){ 
-            Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero, 20f, canSelectToShowLayer);
-            if(hit.collider != null) {
-                Debug.Log("osui");
-            }
-        }
     }
 
 
@@ -35,6 +23,5 @@ public class PlayerController : MonoBehaviour
 
     void OnMove(InputValue value){
         rawInput = value.Get<Vector2>();
-        
     }
 }

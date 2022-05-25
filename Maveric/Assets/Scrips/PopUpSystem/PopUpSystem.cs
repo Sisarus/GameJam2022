@@ -5,14 +5,16 @@ using TMPro;
 
 public class PopUpSystem : MonoBehaviour
 {
-    public GameObject popUpBox;
+    public GameObject popUpBoxPrefab;
 
     public Animator animator;
     public TMP_Text popUpText;
 
+    public TMP_Text popUpTitle;
 
-    public void PopUp(string text){
+    public void PopUp(string text, string title){
         popUpText.text = text;
+        popUpTitle.text = title;
         animator.SetTrigger("pop");
     }
 
