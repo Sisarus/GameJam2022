@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 2792956136268260155}
   - component: {fileID: 2792956136268260154}
   - component: {fileID: 2792956136268260153}
-  - component: {fileID: 7870729533312896062}
   - component: {fileID: 4442295655101723136}
   m_Layer: 7
   m_Name: creatuteAnt
-  m_TagString: Untagged
+  m_TagString: CreaturesForPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,21 +103,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7870729533312896062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2792956136268260133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90ba7a5fae0be5543886cf1c263594c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isControlledByPlayer: 1
-  isPlayer: 1
-  creatureName: Ant
 --- !u!70 &4442295655101723136
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

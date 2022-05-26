@@ -23,10 +23,12 @@ public class PlayerIsNow : MonoBehaviour {
     [HideInInspector]
     public List<GameObject> creaturePrefabs = new List<GameObject> ();
 
+    Transform creature = null;
+
     void Awake(){
         playerController = transform.GetComponent<PlayerController>();
         foreach (Transform child in transform) creaturePrefabs.Add (child.gameObject);
-        HideOtherCreatures(creatureNumber);
+        HideOtherCreatures();
     }
     
     void Update () {
@@ -35,10 +37,16 @@ public class PlayerIsNow : MonoBehaviour {
             Vector2 worldPoint = Camera.main.ScreenToWorldPoint (Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast (worldPoint, Vector2.zero, 20f, layerMask);
             if (hit.collider) {
-                playerController.newPos = hit.transform.position;
-                playerController.takingOver = true;
-                creaName = hit.transform.GetComponent<CreatureController>().creatureName;
-                LookForCreature(creaName);
+                creature = hit.transform;
+                Debug.Log("Olio vapaaa: " + creature.GetComponent<CreatureController>().isHome);
+                if(creature.GetComponent<CreatureController>().isHome){
+                    playerController.newPos = hit.transform.position;
+                    playerController.takingOver = true;
+                    creaName = creature.GetComponent<CreatureController>().creatureName;
+                    creature.GetComponent<CreatureController>().goHome = false;
+                    creature.GetComponent<CreatureController>().targetPlayer = transform;
+                    LookForCreature(creaName);
+                }
             }
         }
 
@@ -47,15 +55,24 @@ public class PlayerIsNow : MonoBehaviour {
             if (timer <= 0.0f){
                 creatureNumber = 0;
                 creaName = "ghost";
-                HideOtherCreatures(creatureNumber);
+                creature.GetComponent<CreatureController>().goHome = true;
+                creature.GetComponent<CreatureController>().isControlledByPlayer = false;
+                creature = null;
+                HideOtherCreatures();
             }
-        } 
+        }
+
+        if(playerController.changeToCreature){
+            HideOtherCreatures();
+            playerController.changeToCreature = false;
+            creature.GetComponent<CreatureController>().isControlledByPlayer = true;
+        }
     }
 
     public void LookForCreature (string comName) {
         int creatureIndex = 0;
         foreach (GameObject creature in creaturePrefabs) {
-            string checkName = creature.transform.GetComponent<CreatureController> ().creatureName;
+            string checkName = creature.transform.GetComponent<CreatureData>().creatureName;
             if (checkName == null) {
                 break;
             } else if (checkName == comName) {
@@ -64,14 +81,12 @@ public class PlayerIsNow : MonoBehaviour {
             creatureIndex++;
         }
         creatureNumber = creatureIndex;
-        HideOtherCreatures(creatureIndex);
-
     }
 
-    public void HideOtherCreatures (int dontHide) {
+    public void HideOtherCreatures () {
         int creatureIndex = 0;
         foreach (GameObject creature in creaturePrefabs) {
-            if (dontHide == creatureIndex) {
+            if (creatureNumber == creatureIndex) {
                 creature.SetActive(true);
             } else {
                 creature.SetActive(false);

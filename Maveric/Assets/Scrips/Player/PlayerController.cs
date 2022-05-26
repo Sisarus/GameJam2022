@@ -13,7 +13,10 @@ public class PlayerController : MonoBehaviour
 
     public bool takingOver;
 
+    public bool changeToCreature = false;
+
     [HideInInspector]
+
     public Vector3 newPos;
 
     void Update()
@@ -22,6 +25,7 @@ public class PlayerController : MonoBehaviour
         if(takingOver){
             transform.position = Vector2.MoveTowards (transform.position, newPos, moveSpeed * 2 * Time.deltaTime);
             if (transform.position == newPos) {
+                changeToCreature = true;
                 takingOver = false;
             }
         }

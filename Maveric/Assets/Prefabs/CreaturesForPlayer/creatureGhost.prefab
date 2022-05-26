@@ -10,11 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2979770907718005967}
   - component: {fileID: 2979770907718005960}
-  - component: {fileID: -792573409848652418}
   - component: {fileID: 8061183733647136156}
   m_Layer: 0
   m_Name: creatureGhost
-  m_TagString: Untagged
+  m_TagString: CreaturesForPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,21 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-792573409848652418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2979770907718005963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90ba7a5fae0be5543886cf1c263594c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isControlledByPlayer: 1
-  isPlayer: 1
-  creatureName: ghost
 --- !u!95 &8061183733647136156
 Animator:
   serializedVersion: 3

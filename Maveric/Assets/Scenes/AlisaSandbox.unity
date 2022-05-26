@@ -345,13 +345,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2094901880}
     m_Modifications:
+    - target: {fileID: 2979770907718005960, guid: a209467a4a50aec4bbd1e46d87e6087f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2979770907718005963, guid: a209467a4a50aec4bbd1e46d87e6087f, type: 3}
       propertyPath: m_Name
       value: creatureGhost
-      objectReference: {fileID: 0}
-    - target: {fileID: 2979770907718005963, guid: a209467a4a50aec4bbd1e46d87e6087f, type: 3}
-      propertyPath: m_TagString
-      value: CreaturesForPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 2979770907718005967, guid: a209467a4a50aec4bbd1e46d87e6087f, type: 3}
       propertyPath: m_RootOrder
@@ -399,6 +399,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a209467a4a50aec4bbd1e46d87e6087f, type: 3}
+--- !u!1 &348140263 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2792956136268260133, guid: 44550feadbf842d4b8ea0022a39dc841, type: 3}
+  m_PrefabInstance: {fileID: 455461010}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &348140266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348140263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65448b8df13cd2f42ad83b7ee55c56e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creatureName: ant
 --- !u!1001 &409196837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -546,10 +564,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: creatureAnt
       objectReference: {fileID: 0}
-    - target: {fileID: 2792956136268260133, guid: 44550feadbf842d4b8ea0022a39dc841, type: 3}
-      propertyPath: m_TagString
-      value: CreaturesForPlayer
-      objectReference: {fileID: 0}
     - target: {fileID: 2792956136268260155, guid: 44550feadbf842d4b8ea0022a39dc841, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -594,10 +608,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7870729533312896062, guid: 44550feadbf842d4b8ea0022a39dc841, type: 3}
-      propertyPath: creatureName
-      value: ant
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44550feadbf842d4b8ea0022a39dc841, type: 3}
 --- !u!114 &694254428 stripped
@@ -611,25 +621,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &707965523 stripped
+--- !u!1 &1116246429 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8473426878702287185, guid: ad1ab1d1af5519a4d84466031f85b122, type: 3}
-  m_PrefabInstance: {fileID: 1867127713}
+  m_CorrespondingSourceObject: {fileID: 2979770907718005963, guid: a209467a4a50aec4bbd1e46d87e6087f, type: 3}
+  m_PrefabInstance: {fileID: 327094915}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &707965524
+--- !u!114 &1116246432
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 707965523}
+  m_GameObject: {fileID: 1116246429}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79f8dac9cdaf6a0498ed433c4bd2f66d, type: 3}
+  m_Script: {fileID: 11500000, guid: 65448b8df13cd2f42ad83b7ee55c56e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerIsNow: {fileID: 0}
-  creaturesForPlayer: {fileID: 0}
   creatureName: ghost
 --- !u!114 &1448435315 stripped
 MonoBehaviour:
