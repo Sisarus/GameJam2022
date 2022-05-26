@@ -20,10 +20,6 @@ public class ObjectData : MonoBehaviour
     [SerializeField]
     public LayerMask canSelectToShowLayer;
 
-    [Header("Player Control")]
-    [SerializeField] bool playerCanControl = false;
-
-    bool isPopUpShowing = false;
     // Start is called before the first frame update
     void Start()
     {

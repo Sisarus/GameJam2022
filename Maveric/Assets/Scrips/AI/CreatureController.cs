@@ -27,7 +27,7 @@ public class CreatureController : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        int creatureNumber = FindObjectOfType<PlayerIsNow>().GetComponent<PlayerIsNow>().creatureNumber;;
+        int creatureNumber = FindObjectOfType<PlayerIsNow>().GetComponent<PlayerIsNow>().creatureNumber;
         if (!pathFinder && !isPlayer && creatureNumber == 0 || !isControlledByPlayer && !isPlayer && creatureNumber == 0) {
             Vector2 worldPoint = Camera.main.ScreenToWorldPoint (Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast (worldPoint, Vector2.zero, 20f);

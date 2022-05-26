@@ -131,7 +131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isControlledByPlayer: 0
-  creatureName: Ant
+  isPlayer: 0
+  creatureName: ant
 --- !u!70 &1864630351990364512
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -167,4 +168,3 @@ MonoBehaviour:
   canSelectToShowLayer:
     serializedVersion: 2
     m_Bits: 64
-  playerCanControl: 1

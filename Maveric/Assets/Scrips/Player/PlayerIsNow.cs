@@ -4,25 +4,31 @@ using UnityEngine;
 
 public class PlayerIsNow : MonoBehaviour {
 
-    public List<GameObject> creaturePrefabs;
-
     public LayerMask layerMask;
 
     public float timeForCreature;
-    float timer;
 
+    [HideInInspector]
+    float timer;
+    
+    [HideInInspector]
+    public int creatureNumber = 0;
+
+    [HideInInspector]
+    public string creaName = "ghost";
+
+    [HideInInspector]
     PlayerController playerController;
 
     [HideInInspector]
-    public int creatureNumber;
+    public List<GameObject> creaturePrefabs = new List<GameObject> ();
 
-    // Start is called before the first frame update
-    void Start () {
-        playerController = GetComponent<PlayerController> ();
-        HideOtherCreatures(0);
+    void Awake(){
+        playerController = transform.GetComponent<PlayerController>();
+        foreach (Transform child in transform) creaturePrefabs.Add (child.gameObject);
+        HideOtherCreatures(creatureNumber);
     }
-
-    // Update is called once per frame
+    
     void Update () {
 
         if (Input.GetMouseButtonDown (0) && creatureNumber == 0) {
@@ -31,46 +37,46 @@ public class PlayerIsNow : MonoBehaviour {
             if (hit.collider) {
                 playerController.newPos = hit.transform.position;
                 playerController.takingOver = true;
-                string creaName = hit.transform.GetComponent<CreatureController>().creatureName;
+                creaName = hit.transform.GetComponent<CreatureController>().creatureName;
                 LookForCreature(creaName);
             }
         }
-
 
         if(creatureNumber != 0){
             timer -= Time.deltaTime;
             if (timer <= 0.0f){
                 creatureNumber = 0;
-                HideOtherCreatures(0);
+                creaName = "ghost";
+                HideOtherCreatures(creatureNumber);
             }
-            Debug.Log("ajastin käyy " +  timer);
-        }
+        } 
     }
 
-    void LookForCreature(string compareName){
-        int check = 0;
-        foreach(GameObject creature in creaturePrefabs){
-            string checkName = creature.transform.GetComponent<CreatureController>().creatureName;
-            if(checkName == null){
-                break;               
-            } else if(checkName == compareName){
+    public void LookForCreature (string comName) {
+        int creatureIndex = 0;
+        foreach (GameObject creature in creaturePrefabs) {
+            string checkName = creature.transform.GetComponent<CreatureController> ().creatureName;
+            if (checkName == null) {
+                break;
+            } else if (checkName == comName) {
                 break;
             }
-            check++;
+            creatureIndex++;
         }
-        creatureNumber = check;
-        HideOtherCreatures(check);
+        creatureNumber = creatureIndex;
+        HideOtherCreatures(creatureIndex);
+
     }
 
-    void HideOtherCreatures(int noHide){
-        int hided = 0;
-        foreach(GameObject creature in creaturePrefabs){
-            if(noHide == hided){
+    public void HideOtherCreatures (int dontHide) {
+        int creatureIndex = 0;
+        foreach (GameObject creature in creaturePrefabs) {
+            if (dontHide == creatureIndex) {
                 creature.SetActive(true);
-            } else{
+            } else {
                 creature.SetActive(false);
             }
-            hided++;
+            creatureIndex++;
         }
         timer = timeForCreature;
     }
