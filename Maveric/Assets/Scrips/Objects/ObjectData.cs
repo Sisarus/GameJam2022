@@ -63,9 +63,14 @@ public class ObjectData : MonoBehaviour {
 
             if (Input.GetKeyDown (KeyCode.Space)) {
                 Debug.Log ("NAm NAm");
-                PlayerData PD = FindObjectOfType<PlayerData>();
-                PD.MofifyEnergyPoints(1);
-                energy--;
+                PlayerIsNow pin = FindObjectOfType<PlayerIsNow>();
+                if(pin.creatureNumber != 0){
+                    PlayerData PD = FindObjectOfType<PlayerData>();
+                    PD.MofifyEnergyPoints(1);
+                    energy--;
+                } else {
+                    playerInRange = false;
+                }
             }
         }
     }

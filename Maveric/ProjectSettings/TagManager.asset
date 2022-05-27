@@ -8,6 +8,7 @@ TagManager:
   - CreaturesForPlayer
   - ant
   - food
+  - ghost
   layers:
   - Default
   - TransparentFX
@@ -17,9 +18,9 @@ TagManager:
   - UI
   - Data
   - TakeOver
-  - 
-  - 
-  - 
+  - borderPlayer
+  - Player
+  - Background
   - 
   - 
   - 
