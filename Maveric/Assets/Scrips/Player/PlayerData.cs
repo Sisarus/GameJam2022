@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour
 {
 
-    int playerLevel;
+    public int playerLevel = 1;
 
-    public float energyPoints = 1;
+    public float energyPoints = 0;
 
     float timeHowLongCanBeCrature = 5;
 
@@ -40,4 +40,5 @@ public class PlayerData : MonoBehaviour
     public void ModifyTimeHowLongCanBeCrature(float value){
         timeHowLongCanBeCrature += value;
     }
+
 }

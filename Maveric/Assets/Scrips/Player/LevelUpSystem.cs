@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class LevelUpSystem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public List<int> energyLevels = new List<int>();
+
+    public int GetNextLevelEnergyLevel(int playerLevel){
+        return 10;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
