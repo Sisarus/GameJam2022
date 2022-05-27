@@ -5,7 +5,8 @@ using UnityEngine;
 public class ShinyObject : MonoBehaviour
 {
     public GameObject VFX_Prefabs;
-        public GameObject VFX_Prefabs_second;
+    
+    public GameObject VFX_Prefabs_second;
     // Start is called before the first frame update
     void Start()
     {

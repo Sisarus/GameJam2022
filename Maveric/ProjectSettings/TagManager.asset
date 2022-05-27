@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - GameManager
+  - CreaturesForPlayer
+  - ant
+  - food
+  - ghost
   layers:
   - Default
   - TransparentFX
@@ -13,10 +17,10 @@ TagManager:
   - Water
   - UI
   - Data
-  - 
-  - 
-  - 
-  - 
+  - TakeOver
+  - borderPlayer
+  - Player
+  - Background
   - 
   - 
   - 
