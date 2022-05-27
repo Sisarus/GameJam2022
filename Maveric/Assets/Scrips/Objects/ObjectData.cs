@@ -20,16 +20,21 @@ public class ObjectData : MonoBehaviour {
     [SerializeField]
     public LayerMask canSelectToShowLayer;
 
-    public GameObject energyBarUI;
+    public GameObject canvasGO;
+
+    CanvasGroup canvasUI;
 
     public Slider slider;
 
+    private bool playerInRange = false;
+
     // Start is called before the first frame update
     void Start () {
+
         energy = maxEnergy;
-        if (!isCreature) {
-            slider.value = CalculateEnergy ();
-        }
+        slider.value = CalculateEnergy ();
+        canvasUI = canvasGO.GetComponent<CanvasGroup> ();
+        Hide ();
     }
 
     // Update is called once per frame
@@ -46,9 +51,8 @@ public class ObjectData : MonoBehaviour {
             }
         }
 
-        if (!isCreature) {
+        if (playerInRange) {
             if (energy < maxEnergy) {
-                energyBarUI.SetActive (true);
                 slider.value = CalculateEnergy ();
             }
 
@@ -56,11 +60,40 @@ public class ObjectData : MonoBehaviour {
                 Destroy (gameObject);
             }
             if (energy > maxEnergy) energy = maxEnergy;
+
+            if (Input.GetKeyDown (KeyCode.Space)) {
+                Debug.Log ("NAm NAm");
+                PlayerData PD = FindObjectOfType<PlayerData>();
+                PD.MofifyEnergyPoints(1);
+                energy--;
+            }
         }
     }
 
     float CalculateEnergy () {
         return energy / maxEnergy;
+    }
+
+    private void OnTriggerEnter2D (Collider2D other) {
+        if (other.tag == "ant") {
+            playerInRange = true;
+            Show ();
+        }
+    }
+
+    private void OnTriggerExit2D (Collider2D other) {
+        if (other.tag == "ant") {
+            playerInRange = true;
+            Hide ();
+        }
+    }
+
+    void Hide () {
+        canvasUI.alpha = 0f;
+    }
+
+    void Show () {
+        canvasUI.alpha = 1f;
     }
 
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3530522260886399342}
   - component: {fileID: 5295171028960405342}
   - component: {fileID: 1864630351990364512}
-  - component: {fileID: 540703866668006763}
+  - component: {fileID: 2264808021759793876}
   m_Layer: 7
   m_Name: ant
   m_TagString: Untagged
@@ -151,7 +151,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.00694561}
   m_Size: {x: 0.5, y: 0.60986805}
   m_Direction: 0
---- !u!114 &540703866668006763
+--- !u!114 &2264808021759793876
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,16 +160,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 181509575547095109}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad9962409e1a2004d8f34087d4aea84f, type: 3}
+  m_Script: {fileID: 11500000, guid: 917d3973dbc83764c9c114bf570184c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameObject: Ant
+  nameObject: ant
   isCreature: 1
-  data: Small creature
+  data: Its an ant!
   energy: 20
   maxEnergy: 20
   canSelectToShowLayer:
     serializedVersion: 2
-    m_Bits: 64
-  energyBarUI: {fileID: 0}
-  slider: {fileID: 0}
+    m_Bits: 0
+  playerLevel: 1
