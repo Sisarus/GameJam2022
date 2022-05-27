@@ -131,8 +131,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isControlledByPlayer: 0
-  isPlayer: 0
   creatureName: ant
+  goHome: 1
+  isHome: 1
+  targetPlayer: {fileID: 0}
 --- !u!70 &1864630351990364512
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -162,9 +164,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameObject: Ant
-  data: Can conttroll
+  isCreature: 1
+  data: Small creature
   energy: 20
-  eatedLevel: 0
+  maxEnergy: 20
   canSelectToShowLayer:
     serializedVersion: 2
     m_Bits: 64
+  energyBarUI: {fileID: 0}
+  slider: {fileID: 0}

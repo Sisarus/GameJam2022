@@ -10,7 +10,7 @@ public class PlayerIsNow : MonoBehaviour {
 
     [HideInInspector]
     float timer;
-    
+
     [HideInInspector]
     public int creatureNumber = 0;
 
@@ -25,12 +25,18 @@ public class PlayerIsNow : MonoBehaviour {
 
     Transform creature = null;
 
-    void Awake(){
-        playerController = transform.GetComponent<PlayerController>();
+    bool timerOn = false;
+
+    PlayerData playerData;
+
+    void Awake () {
+        playerController = transform.GetComponent<PlayerController> ();
         foreach (Transform child in transform) creaturePrefabs.Add (child.gameObject);
-        HideOtherCreatures();
+        HideOtherCreatures ();
+        playerData = transform.GetComponent<PlayerData> ();
+        timeForCreature = playerData.GetTimeHowLongCanBeCrature();
     }
-    
+
     void Update () {
 
         if (Input.GetMouseButtonDown (0) && creatureNumber == 0) {
@@ -38,41 +44,44 @@ public class PlayerIsNow : MonoBehaviour {
             RaycastHit2D hit = Physics2D.Raycast (worldPoint, Vector2.zero, 20f, layerMask);
             if (hit.collider) {
                 creature = hit.transform;
-                Debug.Log("Olio vapaaa: " + creature.GetComponent<CreatureController>().isHome);
-                if(creature.GetComponent<CreatureController>().isHome){
+                Debug.Log ("Olio vapaaa: " + creature.GetComponent<CreatureController> ().isHome);
+                if (creature.GetComponent<CreatureController> ().isHome) {
                     playerController.newPos = hit.transform.position;
                     playerController.takingOver = true;
-                    creaName = creature.GetComponent<CreatureController>().creatureName;
-                    creature.GetComponent<CreatureController>().goHome = false;
-                    creature.GetComponent<CreatureController>().targetPlayer = transform;
-                    LookForCreature(creaName);
+                    creaName = creature.GetComponent<CreatureController> ().creatureName;
+                    creature.GetComponent<CreatureController> ().goHome = false;
+                    creature.GetComponent<CreatureController> ().targetPlayer = transform;
+                    LookForCreature (creaName);
                 }
             }
         }
 
-        if(creatureNumber != 0){
+        if (timerOn) {
             timer -= Time.deltaTime;
-            if (timer <= 0.0f){
+            if (timer <= 0.0f) {
                 creatureNumber = 0;
                 creaName = "ghost";
-                creature.GetComponent<CreatureController>().goHome = true;
-                creature.GetComponent<CreatureController>().isControlledByPlayer = false;
+                creature.GetComponent<CreatureController> ().goHome = true;
+                creature.GetComponent<CreatureController> ().isControlledByPlayer = false;
                 creature = null;
-                HideOtherCreatures();
+                HideOtherCreatures ();
+                timerOn = false;
             }
         }
 
-        if(playerController.changeToCreature){
-            HideOtherCreatures();
+        if (playerController.changeToCreature) {
+            HideOtherCreatures ();
             playerController.changeToCreature = false;
-            creature.GetComponent<CreatureController>().isControlledByPlayer = true;
+            Debug.Log(creature);
+            creature.GetComponent<CreatureController> ().isControlledByPlayer = true;
+            timerOn = true;
         }
     }
 
     public void LookForCreature (string comName) {
         int creatureIndex = 0;
         foreach (GameObject creature in creaturePrefabs) {
-            string checkName = creature.transform.GetComponent<CreatureData>().creatureName;
+            string checkName = creature.transform.GetComponent<CreatureData> ().creatureName;
             if (checkName == null) {
                 break;
             } else if (checkName == comName) {
@@ -87,9 +96,9 @@ public class PlayerIsNow : MonoBehaviour {
         int creatureIndex = 0;
         foreach (GameObject creature in creaturePrefabs) {
             if (creatureNumber == creatureIndex) {
-                creature.SetActive(true);
+                creature.SetActive (true);
             } else {
-                creature.SetActive(false);
+                creature.SetActive (false);
             }
             creatureIndex++;
         }

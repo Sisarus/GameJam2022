@@ -8,11 +8,14 @@ public class PlayerController : MonoBehaviour
 {
 
     [SerializeField] float moveSpeed = 5f;
-
+    
+    [HideInInspector]
     Vector2 rawInput;
 
+    [HideInInspector]
     public bool takingOver;
 
+    [HideInInspector]
     public bool changeToCreature = false;
 
     [HideInInspector]
