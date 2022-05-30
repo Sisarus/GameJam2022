@@ -1069,7 +1069,7 @@ GameObject:
   - component: {fileID: 290557130}
   - component: {fileID: 290557129}
   m_Layer: 8
-  m_Name: forest block 2
+  m_Name: forest collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
