@@ -82,7 +82,7 @@ public class CreatureController : MonoBehaviour {
 
         if (backPath.Count > 0 && !isControlledByPlayer && !isHome) {
             Vector3 goHome = backPath[backPath.Count - 1];
-            transform.position = Vector3.MoveTowards (transform.position, goHome, Time.deltaTime * 0.5f);
+            transform.position = Vector3.MoveTowards (transform.position, goHome, Time.deltaTime * 5f);
             if (Vector3.Distance (goHome, transform.position) < 0.02f) {
                 backPath.RemoveAt (backPath.Count - 1);
             }
