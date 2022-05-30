@@ -97,7 +97,8 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 128
-  timeForCreature: 0
+  timeForCreature: 10
+  timer: 0
   creatureNumber: 0
   creaName: 
   creaturePrefabs: []
@@ -115,6 +116,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLevel: 1
   energyPoints: 0
+  timeHowLongCanBeCreature: 10
+  timePassedAsCreature: 0
 --- !u!1001 &54923703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -128,7 +131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2792956136268260133, guid: 44550feadbf842d4b8ea0022a39dc841, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2792956136268260133, guid: 44550feadbf842d4b8ea0022a39dc841, type: 3}
       propertyPath: m_IsActive
