@@ -9,7 +9,7 @@ public class LevelUpBar : MonoBehaviour {
     [Header("Level Up - slider")]
     public Slider levelSlider;
 
-    float energyLevel;
+    int energyLevel;
 
     int maxLevelToLevelUp;
 
@@ -43,10 +43,15 @@ public class LevelUpBar : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (energyLevel == maxLevelToLevelUp) {
-            Debug.Log ("Level up");
-            Debug.Log ("but must done!");
+        if (playerData.energyPoints >= maxLevelToLevelUp) {
+          
+
+            Endgame end = FindObjectOfType<Endgame> ();
+            end.isEndgame = true;
+       
         }
+
+    
 
         levelSlider.value = playerData.energyPoints;
 
