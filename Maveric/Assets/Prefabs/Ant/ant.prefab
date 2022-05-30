@@ -135,7 +135,7 @@ MonoBehaviour:
   goHome: 1
   isHome: 1
   targetPlayer: {fileID: 0}
-  possessionVFX: {fileID: 6208930596018636680, guid: f3b0f798c6e1c9646947271aae6be8fa, type: 3}
+  possessionVFX: {fileID: 5762246217137068528, guid: 91deb5e2c46ec8145b56e44bc52632e6, type: 3}
 --- !u!70 &1864630351990364512
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
