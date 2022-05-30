@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerIsNow : MonoBehaviour {
 
     public LayerMask layerMask;
-
+    [HideInInspector]
     public float timeForCreature;
 
     [HideInInspector]
@@ -27,7 +27,6 @@ public class PlayerIsNow : MonoBehaviour {
 
     bool timerOn = false;
 
-
     void Awake () {
         playerController = transform.GetComponent<PlayerController> ();
         foreach (Transform child in transform) creaturePrefabs.Add (child.gameObject);
@@ -41,7 +40,6 @@ public class PlayerIsNow : MonoBehaviour {
             RaycastHit2D hit = Physics2D.Raycast (worldPoint, Vector2.zero, 20f, layerMask);
             if (hit.collider) {
                 creature = hit.transform;
-                Debug.Log ("Olio vapaaa: " + creature.GetComponent<CreatureController> ().isHome);
                 if (creature.GetComponent<CreatureController> ().isHome) {
                     playerController.newPos = hit.transform.position;
                     playerController.takingOver = true;
@@ -69,7 +67,7 @@ public class PlayerIsNow : MonoBehaviour {
         if (playerController.changeToCreature) {
             HideOtherCreatures ();
             playerController.changeToCreature = false;
-            Debug.Log(creature);
+            Debug.Log (creature);
             creature.GetComponent<CreatureController> ().isControlledByPlayer = true;
             timerOn = true;
         }
@@ -79,6 +77,7 @@ public class PlayerIsNow : MonoBehaviour {
         int creatureIndex = 0;
         foreach (GameObject creature in creaturePrefabs) {
             string checkName = creature.transform.GetComponent<CreatureData> ().creatureName;
+            Debug.Log (checkName + "  " + comName);
             if (checkName == null) {
                 break;
             } else if (checkName == comName) {
