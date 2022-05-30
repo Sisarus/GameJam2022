@@ -1820,7 +1820,7 @@ PrefabInstance:
       objectReference: {fileID: 1110285317}
     - target: {fileID: 1773296427, guid: f539b7b2398a2dd4bb546e7fe5a6d951, type: 3}
       propertyPath: energyPoints
-      value: 25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 891795514789381095, guid: f539b7b2398a2dd4bb546e7fe5a6d951, type: 3}
       propertyPath: m_Name

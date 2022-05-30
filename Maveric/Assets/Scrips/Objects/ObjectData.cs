@@ -62,7 +62,6 @@ public class ObjectData : MonoBehaviour {
             if (energy > maxEnergy) energy = maxEnergy;
 
             if (Input.GetKeyDown (KeyCode.Space)) {
-                Debug.Log ("NAm NAm");
                 PlayerIsNow pin = FindObjectOfType<PlayerIsNow> ();
                 if (pin.creatureNumber != 0) {
                     PlayerData PD = FindObjectOfType<PlayerData> ();
