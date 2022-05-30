@@ -22,6 +22,8 @@ public class PlayerIsNow : MonoBehaviour {
 
     [HideInInspector]
     public List<GameObject> creaturePrefabs = new List<GameObject> ();
+    [HideInInspector]
+    public bool backToStartPoint = false;
 
     Transform creature = null;
 
@@ -54,6 +56,7 @@ public class PlayerIsNow : MonoBehaviour {
         if (timerOn) {
             timer -= Time.deltaTime;
             if (timer <= 0.0f) {
+                backToStartPoint = true;
                 creatureNumber = 0;
                 creaName = "ghost";
                 creature.GetComponent<CreatureController> ().goHome = true;
