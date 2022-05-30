@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour
 
     public Vector3 newPos;
 
+    public float HorizontalValue;
+    public bool facingRight;
+
     void Update()
     {
         if(!takingOver) Move();
@@ -32,14 +35,23 @@ public class PlayerController : MonoBehaviour
                 takingOver = false;
             }
         }
+        FlipSprite();
     }
 
     void Move(){
         Vector3 delta = rawInput * moveSpeed * Time.deltaTime;
         transform.position += delta;
+        HorizontalValue = rawInput.x;
     }
 
     void OnMove(InputValue value){
         rawInput = value.Get<Vector2>();
+    }
+
+    void FlipSprite(){
+        if(HorizontalValue < 0 && !facingRight || HorizontalValue > 0 && facingRight){
+            facingRight = !facingRight;
+            transform.Rotate(new Vector3(0, 180, 0));
+        }
     }
 }
