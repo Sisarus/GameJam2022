@@ -1068,7 +1068,7 @@ GameObject:
   - component: {fileID: 290557131}
   - component: {fileID: 290557130}
   - component: {fileID: 290557129}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: forest block 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1615,7 +1615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1773296427, guid: f539b7b2398a2dd4bb546e7fe5a6d951, type: 3}
       propertyPath: timeHowLongCanBeCreature
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 891795514789381095, guid: f539b7b2398a2dd4bb546e7fe5a6d951, type: 3}
       propertyPath: m_Name
