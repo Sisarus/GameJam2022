@@ -1,6 +1,6 @@
 # GameJam2022
 
-Almost everything is selfmade
+Almost everything is selfmade by two sisters. Our first game together. Hopelly not last :D
 
 Here our list of our helpers:
 
