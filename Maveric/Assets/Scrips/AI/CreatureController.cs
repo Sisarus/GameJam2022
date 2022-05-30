@@ -27,6 +27,12 @@ public class CreatureController : MonoBehaviour {
     [HideInInspector]
     public Transform targetPlayer;
 
+    public ParticleSystem possessionVFX;
+
+    bool isInstance = false;
+
+    ParticleSystem instance;
+
     // Start is called before the first frame update
     void Awake () {
         animator = GetComponent<Animator> ();
@@ -80,14 +86,35 @@ public class CreatureController : MonoBehaviour {
             if (Vector3.Distance (goHome, transform.position) < 0.02f) {
                 backPath.RemoveAt (backPath.Count - 1);
             }
+            if(!isInstance){
+                SkullGlow(0);
+            }
         }
+
 
         if (backPath.Count == 0) {
             isHome = true;
+            if(isInstance){
+                SkullGlow(1);               
+            }
+
         } else {
             isHome = false;
         }
 
+    }
+
+    void SkullGlow(int num){
+        if(num == 0){
+            instance = Instantiate(possessionVFX, transform.position, Quaternion.identity);
+            instance.transform.parent = transform;
+            isInstance = true;
+        }
+        
+        if(num == 1){
+            Destroy(instance.gameObject);
+            isInstance = false;
+        }
     }
 
 }

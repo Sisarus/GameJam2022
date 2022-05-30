@@ -328,6 +328,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1773296427, guid: f539b7b2398a2dd4bb546e7fe5a6d951, type: 3}
+      propertyPath: timeHowLongCanBeCreature
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 891795514789381095, guid: f539b7b2398a2dd4bb546e7fe5a6d951, type: 3}
       propertyPath: m_Name
       value: Player
@@ -642,6 +646,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4753825277688090049, guid: 55dd65ed4b75dc94da27cf48b69f45a3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5880810469569802569, guid: 55dd65ed4b75dc94da27cf48b69f45a3, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5880810469569802569, guid: 55dd65ed4b75dc94da27cf48b69f45a3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
