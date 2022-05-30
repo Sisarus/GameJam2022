@@ -9,7 +9,7 @@ public class PlayerData : MonoBehaviour {
     public float energyPoints = 0;
 
 
-    public float timeHowLongCanBeCreature = 10;
+    public float timeHowLongCanBeCreature = 5;
 
     [HideInInspector]
     public float timePassedAsCreature;
@@ -21,13 +21,11 @@ public class PlayerData : MonoBehaviour {
     void Awake () {
         levelUpSystem = FindObjectOfType<LevelUpSystem> ();
         playerIsNow = transform.GetComponent<PlayerIsNow>();
-        timeHowLongCanBeCreature = playerIsNow.timeForCreature;
         playerIsNow.timeForCreature = timeHowLongCanBeCreature;
     }
 
     void Update(){
         timePassedAsCreature = playerIsNow.timer;
-        
     }
 
     public void MofifyEnergyPoints (float value) {
