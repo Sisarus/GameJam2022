@@ -2,13 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class LevelUpBar : MonoBehaviour {
-    public Slider slider;
+
+    [Header("Level Up - slider")]
+    public Slider levelSlider;
 
     float energyLevel;
 
     int maxLevelToLevelUp;
+
+    [SerializeField]
+    TextMeshProUGUI levelUpText;
+
+    [Header("Timer - slider")]
+    public Slider timeSlider;
+    [SerializeField]
+    TextMeshProUGUI timerText;
+
 
     LevelUpSystem levelUpSystem;
 
@@ -20,12 +32,11 @@ public class LevelUpBar : MonoBehaviour {
 
         playerData = FindObjectOfType<PlayerData> ();
 
-        maxLevelToLevelUp = levelUpSystem.GetNextLevelEnergyLevel (playerData.playerLevel);
+        maxLevelToLevelUp = levelUpSystem.GetNextLevelEnergyLevel(playerData.playerLevel);
 
-        Debug.Log ("Need energy " + maxLevelToLevelUp + "  " + playerData.energyPoints);
+        levelSlider.maxValue = maxLevelToLevelUp;
+        levelSlider.value = playerData.energyPoints;
 
-        slider.maxValue = maxLevelToLevelUp;
-        slider.value = playerData.energyPoints;
     }
 
     // Update is called once per frame
@@ -35,6 +46,12 @@ public class LevelUpBar : MonoBehaviour {
             Debug.Log ("but must done!");
         }
 
-        slider.value = playerData.energyPoints;
+        levelSlider.value = playerData.energyPoints;
+
+        levelUpText.text = "Level " + playerData.playerLevel + " [ " + playerData.energyPoints + " / " + maxLevelToLevelUp + " ]"; 
+
+        timerText.text = "time " + playerData.timeHowLongCanBeCreature;
     }
+
+    
 }

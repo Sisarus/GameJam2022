@@ -8,33 +8,28 @@ public class PlayerData : MonoBehaviour {
 
     public float energyPoints = 0;
 
-    float timeHowLongCanBeCrature = 5;
+
+    public float timeHowLongCanBeCreature = 5;
+
+    
 
     LevelUpSystem levelUpSystem;
 
+    PlayerIsNow playerIsNow;
+
     void Awake () {
         levelUpSystem = FindObjectOfType<LevelUpSystem> ();
+        playerIsNow = transform.GetComponent<PlayerIsNow>();
+        timeHowLongCanBeCreature = playerIsNow.timeForCreature;
     }
 
-    // Start is called before the first frame update
-    void Start () {
-
-    }
-
-    // Update is called once per frame
-    void Update () {
-
+    void Update(){
+        timeHowLongCanBeCreature = playerIsNow.timeForCreature;
+        
     }
 
     public void MofifyEnergyPoints (float value) {
         energyPoints += value;
     }
 
-    public float GetTimeHowLongCanBeCrature () {
-        return timeHowLongCanBeCrature;
-    }
-
-    public void ModifyTimeHowLongCanBeCrature (float value) {
-        timeHowLongCanBeCrature += value;
-    }
 }

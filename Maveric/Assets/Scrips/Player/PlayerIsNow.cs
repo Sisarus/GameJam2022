@@ -27,14 +27,11 @@ public class PlayerIsNow : MonoBehaviour {
 
     bool timerOn = false;
 
-    PlayerData playerData;
 
     void Awake () {
         playerController = transform.GetComponent<PlayerController> ();
         foreach (Transform child in transform) creaturePrefabs.Add (child.gameObject);
         HideOtherCreatures ();
-        playerData = transform.GetComponent<PlayerData> ();
-        timeForCreature = playerData.GetTimeHowLongCanBeCrature();
     }
 
     void Update () {
