@@ -39,17 +39,17 @@ public class ObjectData : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (Input.GetMouseButtonDown (0)) {
-            Vector2 worldPoint = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast (worldPoint, Vector2.zero, 20f, canSelectToShowLayer);
-            if (hit.collider == gameObject.GetComponent<Collider2D> ()) {
-                PlayerIsNow pin = FindObjectOfType<PlayerIsNow> ();
-                if (pin.creatureNumber == 0) {
-                    PopUpSystem pop = GameObject.FindGameObjectWithTag ("GameManager").GetComponent<PopUpSystem> ();
-                    pop.PopUp (data, nameObject);
-                }
-            }
-        }
+        // if (Input.GetMouseButtonDown (0)) {
+        //     Vector2 worldPoint = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+        //     RaycastHit2D hit = Physics2D.Raycast (worldPoint, Vector2.zero, 20f, canSelectToShowLayer);
+        //     if (hit.collider == gameObject.GetComponent<Collider2D> ()) {
+        //         PlayerIsNow pin = FindObjectOfType<PlayerIsNow> ();
+        //         if (pin.creatureNumber == 0) {
+        //             PopUpSystem pop = GameObject.FindGameObjectWithTag ("GameManager").GetComponent<PopUpSystem> ();
+        //             pop.PopUp (data, nameObject);
+        //         }
+        //     }
+        // }
 
         if (playerInRange) {
             if (energy < maxEnergy) {

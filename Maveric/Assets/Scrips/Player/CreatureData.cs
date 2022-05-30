@@ -5,10 +5,10 @@ using UnityEngine;
 public class CreatureData : MonoBehaviour {
     public string creatureName;
 
-    public Transform player;
+    //     public Transform player;
 
-    void Update () {
-        transform.position = new Vector3 (0, 0, 0);
-        transform.Rotate(0, 0, 0);
-    }
+    //     void Update () {
+    //         transform.position = new Vector3 (0, 0, 0);
+    //         transform.Rotate(0, 0, 0);
+    //     }
 }
