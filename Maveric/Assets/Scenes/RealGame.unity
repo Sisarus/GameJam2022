@@ -365,7 +365,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87971814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00000059604645, y: 0, z: -10}
+  m_LocalPosition: {x: -3.6900005, y: 2.87, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1623,11 +1623,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 891795514789381112, guid: f539b7b2398a2dd4bb546e7fe5a6d951, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3.69
       objectReference: {fileID: 0}
     - target: {fileID: 891795514789381112, guid: f539b7b2398a2dd4bb546e7fe5a6d951, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.87
       objectReference: {fileID: 0}
     - target: {fileID: 891795514789381112, guid: f539b7b2398a2dd4bb546e7fe5a6d951, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4292,7 +4292,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110285315}
   m_LocalRotation: {x: -0, y: -0, z: 0.17570484, w: -0.98444295}
-  m_LocalPosition: {x: -6.47, y: 4.08, z: 0}
+  m_LocalPosition: {x: -3.66, y: 2.58, z: 0}
   m_LocalScale: {x: 0.7174, y: 0.7174, z: 0.7174}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7905,7 +7905,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2093414287
 GameObject:
@@ -8015,11 +8015,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3257577497335566233, guid: cbb924cde0a15f64c8a87a1654dbf5c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.00000059604645
+      value: -3.6900005
       objectReference: {fileID: 0}
     - target: {fileID: 3257577497335566233, guid: cbb924cde0a15f64c8a87a1654dbf5c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.87
       objectReference: {fileID: 0}
     - target: {fileID: 3257577497335566233, guid: cbb924cde0a15f64c8a87a1654dbf5c6, type: 3}
       propertyPath: m_LocalPosition.z
