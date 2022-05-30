@@ -9,7 +9,7 @@ public class PlayerIsNow : MonoBehaviour {
     public float timeForCreature;
 
     [HideInInspector]
-    float timer;
+    public float timer;
 
     [HideInInspector]
     public int creatureNumber = 0;

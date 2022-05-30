@@ -11,6 +11,9 @@ public class PlayerData : MonoBehaviour {
 
     public float timeHowLongCanBeCreature = 10;
 
+    [HideInInspector]
+    public float timePassedAsCreature;
+
     LevelUpSystem levelUpSystem;
 
     PlayerIsNow playerIsNow;
@@ -23,7 +26,7 @@ public class PlayerData : MonoBehaviour {
     }
 
     void Update(){
-        timeHowLongCanBeCreature = playerIsNow.timeForCreature;
+        timePassedAsCreature = playerIsNow.timer;
         
     }
 

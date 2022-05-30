@@ -21,7 +21,6 @@ public class LevelUpBar : MonoBehaviour {
     [SerializeField]
     TextMeshProUGUI timerText;
 
-
     LevelUpSystem levelUpSystem;
 
     PlayerData playerData;
@@ -37,6 +36,9 @@ public class LevelUpBar : MonoBehaviour {
         levelSlider.maxValue = maxLevelToLevelUp;
         levelSlider.value = playerData.energyPoints;
 
+        timeSlider.maxValue = playerData.timeHowLongCanBeCreature;
+        timeSlider.value = playerData.timePassedAsCreature;
+        timerText.text = "time " + playerData.timeHowLongCanBeCreature;
     }
 
     // Update is called once per frame
@@ -50,7 +52,8 @@ public class LevelUpBar : MonoBehaviour {
 
         levelUpText.text = "Level " + playerData.playerLevel + " [ " + playerData.energyPoints + " / " + maxLevelToLevelUp + " ]"; 
 
-        timerText.text = "time " + playerData.timeHowLongCanBeCreature;
+        timeSlider.value = playerData.timePassedAsCreature;
+        timerText.text = "time " + Mathf.Round(playerData.timePassedAsCreature);
     }
 
     
