@@ -7,7 +7,7 @@ public class LevelUpSystem : MonoBehaviour
     public List<int> energyLevels = new List<int>();
 
     public int GetNextLevelEnergyLevel(int playerLevel){
-        return 10;
+        return 30;
     }
 
 }

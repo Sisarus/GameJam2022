@@ -376,6 +376,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2792956136221995666, guid: f539b7b2398a2dd4bb546e7fe5a6d951, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2979770907835236205, guid: f539b7b2398a2dd4bb546e7fe5a6d951, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f539b7b2398a2dd4bb546e7fe5a6d951, type: 3}
 --- !u!1 &439504825
@@ -709,6 +717,14 @@ PrefabInstance:
     - target: {fileID: 5146450957700256725, guid: 59844d7d8352f7249a6d8c1292d67179, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5146450957700256727, guid: 59844d7d8352f7249a6d8c1292d67179, type: 3}
+      propertyPath: energy
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5146450957700256727, guid: 59844d7d8352f7249a6d8c1292d67179, type: 3}
+      propertyPath: maxEnergy
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59844d7d8352f7249a6d8c1292d67179, type: 3}
