@@ -643,8 +643,8 @@ MonoBehaviour:
   nameObject: Apple
   isCreature: 0
   data: Gives energy for Ant
-  energy: 20
-  maxEnergy: 20
+  energy: 5
+  maxEnergy: 5
   canSelectToShowLayer:
     serializedVersion: 2
     m_Bits: 64

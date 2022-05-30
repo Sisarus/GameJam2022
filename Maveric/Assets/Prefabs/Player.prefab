@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 891795514789381094}
   - component: {fileID: 1773296424}
   - component: {fileID: 1773296427}
-  m_Layer: 0
+  - component: {fileID: 1417847590}
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -82,6 +83,8 @@ MonoBehaviour:
   takingOver: 0
   changeToCreature: 0
   newPos: {x: 0, y: 0, z: 0}
+  HorizontalValue: 0
+  facingRight: 0
 --- !u!114 &1773296424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,6 +105,7 @@ MonoBehaviour:
   creatureNumber: 0
   creaName: 
   creaturePrefabs: []
+  backToStartPoint: 0
 --- !u!114 &1773296427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,8 +120,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLevel: 1
   energyPoints: 0
-  timeHowLongCanBeCreature: 10
+  timeHowLongCanBeCreature: 5
   timePassedAsCreature: 0
+--- !u!114 &1417847590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891795514789381095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca49fa42c4ecc034baf2312c2e9369d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnPoint: {fileID: 0}
+  possessionVFX: {fileID: 5476356630682482201, guid: 81ee4e4de5ee17c4f989ddb9e108f3f0, type: 3}
 --- !u!1001 &54923703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131,7 +149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2792956136268260133, guid: 44550feadbf842d4b8ea0022a39dc841, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2792956136268260133, guid: 44550feadbf842d4b8ea0022a39dc841, type: 3}
       propertyPath: m_IsActive

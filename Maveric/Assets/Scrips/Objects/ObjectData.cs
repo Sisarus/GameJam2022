@@ -63,10 +63,10 @@ public class ObjectData : MonoBehaviour {
 
             if (Input.GetKeyDown (KeyCode.Space)) {
                 Debug.Log ("NAm NAm");
-                PlayerIsNow pin = FindObjectOfType<PlayerIsNow>();
-                if(pin.creatureNumber != 0){
-                    PlayerData PD = FindObjectOfType<PlayerData>();
-                    PD.MofifyEnergyPoints(1);
+                PlayerIsNow pin = FindObjectOfType<PlayerIsNow> ();
+                if (pin.creatureNumber != 0) {
+                    PlayerData PD = FindObjectOfType<PlayerData> ();
+                    PD.MofifyEnergyPoints (1);
                     energy--;
                 } else {
                     playerInRange = false;
@@ -80,14 +80,16 @@ public class ObjectData : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D (Collider2D other) {
-        if (other.tag == "ant") {
+        PlayerIsNow pin = other.transform.GetComponent<PlayerIsNow> ();
+        if (pin.creaName == "ant") {
             playerInRange = true;
             Show ();
         }
     }
 
     private void OnTriggerExit2D (Collider2D other) {
-        if (other.tag == "ant") {
+        PlayerIsNow pin = other.transform.GetComponent<PlayerIsNow> ();
+        if (pin.creaName == "ant") {
             playerInRange = true;
             Hide ();
         }
